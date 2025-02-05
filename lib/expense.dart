@@ -1,15 +1,28 @@
+import 'package:expense_tracker/models/expenses.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Expenses extends StatefulWidget {
-  const Expenses({super.key});
+class Expense extends StatefulWidget {
+  const Expense({super.key});
   @override
-  State<Expenses> createState() {
+  State<Expense> createState() {
     return _ExpensesState();
   }
 }
 
-class _ExpensesState extends State<Expenses> {
+class _ExpensesState extends State<Expense> {
+  final List<Expenses> _registeredExpenses = [
+    Expenses(
+        title: "Flutter Course",
+        amount: 10.99,
+        date: DateTime.now(),
+        category: Category.work),
+    Expenses(
+        title: "Cinema",
+        amount: 15.99,
+        date: DateTime.now(),
+        category: Category.leuisure),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(

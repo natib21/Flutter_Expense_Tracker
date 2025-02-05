@@ -28,32 +28,17 @@ class _ExpensesState extends State<Expense> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: SizedBox(
-          width: double.infinity,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'Flutter Expense Tracker',
-                style: GoogleFonts.merriweather(
-                  textStyle: TextStyle(
-                      color: Colors.white,
-                      fontSize: 17,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
-              Spacer(),
-              TextButton.icon(
-                label: Icon(
-                  Icons.add,
-                  color: Colors.white,
-                  size: 25,
-                ),
-                onPressed: () => print('Add button pressed'),
-              )
-            ],
-          ),
-        ),
+        title: Text("Flutter Expense Tracker",
+            style: GoogleFonts.roboto(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white)),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.add, color: Colors.white),
+          )
+        ],
         backgroundColor: const Color.fromARGB(255, 1, 17, 109),
       ),
       body: Column(

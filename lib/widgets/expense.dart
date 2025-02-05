@@ -1,3 +1,4 @@
+import 'package:expense_tracker/widgets/expenses_list/expenese_list.dart';
 import 'package:expense_tracker/models/expenses.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -41,6 +42,7 @@ class _ExpensesState extends State<Expense> {
                       fontWeight: FontWeight.bold),
                 ),
               ),
+              Spacer(),
               TextButton.icon(
                 label: Icon(
                   Icons.add,
@@ -55,7 +57,12 @@ class _ExpensesState extends State<Expense> {
         backgroundColor: const Color.fromARGB(255, 1, 17, 109),
       ),
       body: Column(
-        children: [Text("The Chart"), Text("Expense List")],
+        children: [
+          Text("The Chart"),
+          Expanded(
+            child: ExpensesList(expenses: _registeredExpenses),
+          )
+        ],
       ),
     );
   }

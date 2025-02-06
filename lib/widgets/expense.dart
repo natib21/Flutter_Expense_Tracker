@@ -2,6 +2,7 @@ import 'package:expense_tracker/widgets/expenses_list/expenese_list.dart';
 import 'package:expense_tracker/models/expenses.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:expense_tracker/widgets/new_expense.dart';
 
 class Expense extends StatefulWidget {
   const Expense({super.key});
@@ -30,7 +31,7 @@ class _ExpensesState extends State<Expense> {
         builder: (ctx) {
           return Container(
             padding: EdgeInsets.all(10),
-            child: Text("This is the overlay"),
+            child: NewExpenses(),
           );
         });
   }

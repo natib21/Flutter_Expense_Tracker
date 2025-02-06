@@ -24,6 +24,17 @@ class _ExpensesState extends State<Expense> {
         date: DateTime.now(),
         category: Category.leuisure),
   ];
+  void _openAddExpenseOverlay() {
+    showModalBottomSheet(
+        context: context,
+        builder: (ctx) {
+          return Container(
+            padding: EdgeInsets.all(10),
+            child: Text("This is the overlay"),
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +46,7 @@ class _ExpensesState extends State<Expense> {
                 color: Colors.white)),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: _openAddExpenseOverlay,
             icon: Icon(Icons.add, color: Colors.white),
           )
         ],

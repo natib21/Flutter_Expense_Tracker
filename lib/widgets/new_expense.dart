@@ -11,6 +11,13 @@ class NewExpenses extends StatefulWidget {
 class _NewExpensesState extends State<NewExpenses> {
   final _titleController = TextEditingController();
   final _amountController = TextEditingController();
+
+  void _PresentDatePicker() {
+    final now = DateTime.now();
+    final firstDate = DateTime(now.year - 1, now.month, now.day);
+    showDatePicker(context: context, firstDate: firstDate, lastDate: now);
+  }
+
   @override
   void dispose() {
     _titleController.dispose();
@@ -30,11 +37,32 @@ class _NewExpensesState extends State<NewExpenses> {
             keyboardType: TextInputType.name,
             decoration: InputDecoration(label: Text("Title")),
           ),
-          TextField(
-            controller: _amountController,
-            decoration:
-                InputDecoration(prefixText: "\$ ", label: Text("Amount")),
-            keyboardType: TextInputType.number,
+          Row(
+            children: [
+              Expanded(
+                child: TextField(
+                  controller: _amountController,
+                  decoration:
+                      InputDecoration(prefixText: "\$ ", label: Text("Amount")),
+                  keyboardType: TextInputType.number,
+                ),
+              ),
+              SizedBox(
+                width: 16,
+              ),
+              Expanded(
+                  child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text("Selected Date"),
+                  IconButton(
+                    icon: Icon(Icons.calendar_month),
+                    onPressed: _PresentDatePicker,
+                  )
+                ],
+              ))
+            ],
           ),
           SizedBox(
             height: 20,

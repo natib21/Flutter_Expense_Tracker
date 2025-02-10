@@ -31,9 +31,17 @@ class _ExpensesState extends State<Expense> {
         builder: (ctx) {
           return Container(
             padding: EdgeInsets.all(10),
-            child: NewExpenses(),
+            child: NewExpenses(
+              addExpense: _addExpens,
+            ),
           );
         });
+  }
+
+  void _addExpens(Expenses expenses) {
+    setState(() {
+      _registeredExpenses.add(expenses);
+    });
   }
 
   @override

@@ -82,7 +82,7 @@ class _ExpensesState extends State<Expense> {
         title: Text("Flutter Expense Tracker",
             style: GoogleFonts.roboto(
                 fontSize: 20,
-                fontWeight: FontWeight.bold,
+                // fontWeight: FontWeight.bold,
                 color: Colors.white)),
         actions: [
           IconButton(
@@ -90,7 +90,6 @@ class _ExpensesState extends State<Expense> {
             icon: Icon(Icons.add, color: Colors.white),
           )
         ],
-        backgroundColor: const Color.fromARGB(255, 1, 17, 109),
       ),
       body: Column(
         children: [

@@ -19,7 +19,14 @@ class ExpenseItem extends StatelessWidget {
             SizedBox(height: 4),
             Row(
               children: [
-                Text('\$${expense.amount.toStringAsFixed(2)}'),
+                Text(
+                  '\$${expense.amount.toStringAsFixed(2)}',
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.primary,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
                 Spacer(),
                 Row(
                   children: [
@@ -28,7 +35,12 @@ class ExpenseItem extends StatelessWidget {
                       size: 15,
                     ),
                     SizedBox(width: 8),
-                    Text(expense.formatedDate)
+                    Text(
+                      expense.formatedDate,
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.onSurface,
+                      ),
+                    )
                   ],
                 )
               ],

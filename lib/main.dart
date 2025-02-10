@@ -54,7 +54,7 @@ void main() {
                     fontWeight: FontWeight.bold,
                     color: KColorScheme.onSecondaryContainer),
               )),
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.dark,
       home: Expense()));
 }
 // lecture 05/10

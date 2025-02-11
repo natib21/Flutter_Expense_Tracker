@@ -58,7 +58,7 @@ void main() {
                     fontWeight: FontWeight.bold,
                     color: KColorScheme.onSecondaryContainer),
               )),
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.system,
       home: Expense()));
   // });
 }
